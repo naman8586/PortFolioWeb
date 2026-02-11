@@ -23,15 +23,17 @@ import {
 
 /* ---------------- DATA ---------------- */
 
+/* ---------------- DATA ---------------- */
+
 const projects = [
   {
     id: 1,
-    title: "NamasteNomad",
-    desc: "Full-stack travel platform for exploration.",
+    title: "GitIntel",
+    desc: "Real-time GitHub Analytics Platform.",
     longDesc:
-      "Designed to simplify trip planning in India with hotel discovery, booking flows, and location-based exploration.",
-    link: "https://github.com/naman8586/tourism_project",
-    tags: ["React", "Node.js", "Express"],
+      "A high-performance analytics platform using webhooks to track PRs, reviews, and commits. Features asynchronous pipelines built with Node.js, BullMQ, and Redis to process high-throughput event bursts without data loss.",
+    link: "https://github.com/naman8586/gitIntel",
+    tags: ["Node.js", "BullMQ", "Redis", "Prisma", "PostgreSQL"],
     className: "md:col-span-2 md:row-span-2 min-h-[400px]",
     icon: (
       <Orbit
@@ -42,34 +44,34 @@ const projects = [
   },
   {
     id: 2,
-    title: "Shopinsta",
-    desc: "E-commerce Redux frontend.",
-    longDesc:
-      "Implements scalable product listings, cart persistence, and optimized UI performance using Redux Toolkit.",
-    link: "https://github.com/naman8586/Shopinsta",
-    tags: ["React", "Redux", "Tailwind"],
-    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
-    icon: <Binary size={28} className="text-zinc-600 group-hover:text-white" />,
-  },
-  {
-    id: 3,
     title: "Scrapperly",
-    desc: "Python scraping system.",
+    desc: "Full-Stack Web Scraping Engine.",
     longDesc:
-      "Automates product data extraction using Selenium with bot-evasion techniques and structured outputs.",
+      "Advanced extraction system for JS-heavy websites using Python and Next.js. Implements resilient mechanisms like rotating user agents and request throttling to bypass anti-bot protections with automated background export jobs.",
     link: "https://github.com/naman8586/Scrapperly",
-    tags: ["Python", "Selenium", "Next.js"],
+    tags: ["Next.js", "Python", "Selenium", "Async-Jobs"],
     className: "md:col-span-1 md:row-span-1 min-h-[200px]",
     icon: <Cpu size={28} className="text-zinc-600 group-hover:text-white" />,
   },
   {
-    id: 4,
-    title: "TaskHub",
-    desc: "Secure task management.",
+    id: 3,
+    title: "OutbreakAi",
+    desc: "Early Disease Outbreak Detection.",
     longDesc:
-      "Built with Prisma ORM to manage relational data between users and tasks with role-based access control.",
-    link: "https://github.com/naman8586/TaskHub",
-    tags: ["TypeScript", "Prisma", "Postgres"],
+      "A surveillance tool that mines social media (Twitter/Facebook) using ML to detect early health crisis signals, addressing the reporting lag inherent in traditional clinical systems for faster public health response.",
+    link: "https://github.com/naman8586/OutbreakAi",
+    tags: ["ML", "NLP", "Social Mining", "Data Science"],
+    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+    icon: <Shield size={28} className="text-zinc-600 group-hover:text-white" />,
+  },
+  {
+    id: 4,
+    title: "Zappy",
+    desc: "Vendor Event Day Tracker.",
+    longDesc:
+      "Operational accountability system for vendor workflows. Architected with Node.js and MongoDB to support real-time progress tracking, including pre/post-setup photo verification and completion status updates.",
+    link: "https://github.com/naman8586/Zeppy",
+    tags: ["Node.js", "MongoDB", "Workflow", "Scalable-Arch"],
     className: "md:col-span-1 md:row-span-2 min-h-[400px]",
     icon: (
       <Sparkles size={32} className="text-zinc-600 group-hover:text-white" />
@@ -77,40 +79,70 @@ const projects = [
   },
   {
     id: 5,
-    title: "AI Resume",
-    desc: "ATS LLM generation.",
+    title: "Places Review API",
+    desc: "Django REST Location Intelligence.",
     longDesc:
-      "Uses LLMs to generate role-specific resumes and analyze ATS compatibility signals.",
-    link: "#",
-    tags: ["AI", "NLP", "Next.js"],
+      "A robust Django 4.2 API featuring phone-based authentication and PostgreSQL persistence. Optimized for mobile apps with auto-place creation, token-auth, and advanced search filtering by rating.",
+    link: "https://github.com/naman8586/django_api",
+    tags: ["Django", "DRF", "PostgreSQL", "REST-API"],
     className: "md:col-span-1 md:row-span-1 min-h-[200px]",
-    icon: <Boxes size={28} className="text-zinc-800" />,
-    isWIP: true,
+    icon: <Binary size={28} className="text-zinc-600 group-hover:text-white" />,
   },
   {
     id: 6,
-    title: "Commerce Engine",
-    desc: "Scalable payment system.",
+    title: "TaskHub",
+    desc: "Secure Collaborative Management.",
     longDesc:
-      "End-to-end e-commerce solution featuring authentication, order processing, and Stripe integration.",
-    link: "#",
-    tags: ["Node.js", "Stripe", "PostgreSQL"],
+      "Centralized task management hub using Prisma ORM to manage complex relational data. Focuses on real-time updates and role-based access control for team-wide project orchestration.",
+    link: "https://github.com/naman8586/TaskHub",
+    tags: ["TypeScript", "Next.js", "Prisma", "Postgres"],
     className: "md:col-span-1 md:row-span-1 min-h-[200px]",
-    icon: <Zap size={28} className="text-zinc-800" />,
-    isWIP: true,
+    icon: <Boxes size={28} className="text-zinc-600 group-hover:text-white" />,
   },
   {
     id: 7,
-    title: "Outbreak Detector",
-    desc: "Early signal mining.",
+    title: "NamasteNomad",
+    desc: "Full-stack Tourism discovery.",
     longDesc:
-      "Analyzes social media data to detect early outbreak signals using NLP and trend analysis.",
-    link: "#",
-    tags: ["ML", "NLP", "Data Mining"],
+      "Comprehensive travel exploration platform for India. Designed hotel discovery engines and booking flows using a scalable full-stack React and Node.js architecture.",
+    link: "https://github.com/naman8586/tourism_project",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     className: "md:col-span-2 md:row-span-1 min-h-[200px]",
-    icon: <Shield size={28} className="text-zinc-800" />,
-    isWIP: true,
+    icon: <Zap size={28} className="text-zinc-600 group-hover:text-white" />,
   },
+  {
+    id: 8,
+    title: "AskJiJi",
+    desc: "AI Contextual Query Assistant.",
+    longDesc:
+      "Intelligent chat interface leveraging Large Language Models to provide context-aware answers. Built with React and OpenAI integration for high-fidelity NLP interactions.",
+    link: "https://github.com/naman8586/askJiJi",
+    tags: ["AI", "OpenAI", "NLP", "React"],
+    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+    icon: <Binary size={28} className="text-zinc-600 group-hover:text-white" />,
+  },
+  {
+    id: 9,
+    title: "Crypto Dash",
+    desc: "Live Cryptocurrency Intelligence.",
+    longDesc:
+      "Real-time dashboard for market trends and price tracking. Utilizes dynamic charting and live API polling to provide an optimized financial tracking experience.",
+    link: "https://github.com/naman8586/Crypto_Dash",
+    tags: ["Chart.js", "Financial-API", "React"],
+    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+    icon: <Orbit size={28} className="text-zinc-600 group-hover:text-white" />,
+  },
+  {
+    id: 10,
+    title: "JobPortal",
+    desc: "Recruitment & Marketplace Engine.",
+    longDesc:
+      "A dual-sided marketplace connecting talent with recruiters. Built on Node.js and MongoDB with features for resume processing and advanced talent filtering.",
+    link: "https://github.com/naman8586/JobPortol",
+    tags: ["Node.js", "Express", "Marketplace"],
+    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+    icon: <Cpu size={28} className="text-zinc-600 group-hover:text-white" />,
+  }
 ];
 
 /* ---------------- CARD ---------------- */
