@@ -1,26 +1,25 @@
 "use client";
 /**
- * components/ProjectGrid.jsx
+ * components/ProjectsShell.jsx
  * ─────────────────────────────────────────────────────────
- * Entry point for the Projects section (used in page.js).
- *
- * Provides the section-level Framer Motion scroll parallax,
- * then renders <GitHubProjects> which client-side fetches
- * from /api/projects (server-safe, token hidden).
+ * Thin client wrapper that ONLY provides the section-level
+ * Framer Motion scroll parallax. The actual data is fetched
+ * in the parent Server Component (ProjectGrid.jsx) and passed
+ * as children — this avoids the "async client component" error.
  * ─────────────────────────────────────────────────────────
  */
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import GitHubProjects from "@/components/GitHubProjects";
 
-export default function ProjectGrid() {
+export default function ProjectsShell({ children }) {
   const ref = useRef(null);
 
-  /* Section-level parallax — same as Experience & Education */
+  /* Section-level parallax — identical to Education & Experience */
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
+
   const opacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
   const y       = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, -80]);
   const scale   = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.98]);
@@ -32,18 +31,7 @@ export default function ProjectGrid() {
       style={{ opacity, y, scale }}
       className="relative mx-auto max-w-7xl py-32 px-6"
     >
-      {/* ── Section Heading ── */}
-      <div className="mb-24">
-        <h2 className="text-6xl font-bold tracking-tighter text-white uppercase opacity-90 leading-none md:text-8xl">
-          Projects<span className="font-light italic text-zinc-800">.</span>
-        </h2>
-        <p className="ml-2 mt-6 text-[10px] font-bold uppercase tracking-[0.8em] text-zinc-600">
-          Live from GitHub · 2026
-        </p>
-      </div>
-
-      {/* GitHubProjects fetches from /api/projects client-side */}
-      <GitHubProjects />
+      {children}
     </motion.section>
   );
 }

@@ -36,19 +36,20 @@ export default function Navbar() {
   return (
     <>
       {/* ───────── Desktop Navbar ───────── */}
-      <nav className="fixed top-8 left-1/2 z-50 hidden -translate-x-1/2 md:block">
+      <nav className="fixed top-8 left-0 right-0 z-50 hidden md:flex justify-center pointer-events-none">
         <motion.div
           initial={{ y: -50, opacity: 0, x: "-50%" }}
           animate={{ y: 0, opacity: 1, x: "-50%" }}
-          className={`flex items-center gap-2 rounded-full border px-2 py-2 backdrop-blur-2xl transition-all duration-700 ${
+          className={`hidden pointer-events-auto md:flex items-center gap-2 rounded-full border px-2 py-2 backdrop-blur-2xl transition-all duration-700 ${
             scrolled
               ? "border-white/20 bg-black/40 shadow-[0_0_30px_rgba(0,0,0,0.5)] scale-95"
               : "border-white/10 bg-white/5"
           }`}
-          style={{ position: "fixed", left: "50%" }}
+          style={{ position: "absolute", left: "50%" }}
         >
           {/* Logo */}
           <button
+            suppressHydrationWarning
             onClick={scrollToTop}
             className="mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[10px] font-black tracking-tighter text-black transition-transform hover:scale-110"
           >

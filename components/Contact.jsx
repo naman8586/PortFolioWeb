@@ -103,6 +103,7 @@ export default function Contact() {
                 <input
                   name="name"
                   required
+                  suppressHydrationWarning
                   placeholder="Your Name"
                   className={inputStyles}
                 />
@@ -112,6 +113,7 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
+                  suppressHydrationWarning
                   placeholder="Email Address"
                   className={inputStyles}
                 />
@@ -123,6 +125,7 @@ export default function Contact() {
                 name="message"
                 rows={4}
                 required
+                suppressHydrationWarning
                 placeholder="What's on your mind?"
                 className={inputStyles + " resize-none"}
               />
@@ -133,6 +136,7 @@ export default function Contact() {
                 type="submit"
                 disabled={isSending || isSent}
                 whileHover={{ x: 5 }}
+                suppressHydrationWarning
                 className="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.5em] text-white disabled:text-zinc-700 transition-colors"
               >
                 {isSending

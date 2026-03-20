@@ -1,11 +1,15 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Mail, Github, Linkedin, ArrowDown, FileText } from "lucide-react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
+  // Guard: only show scroll-driven elements after hydration to avoid mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
-  // 🔥 Smooth parallax system (from Hero A)
+  // 🔥 Smooth parallax system
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const y = useTransform(scrollY, [0, 300], [0, 100]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.9]);
@@ -140,22 +144,24 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        style={{ opacity, scale }}
-        className="absolute left-1/2 top-160 flex -translate-x-1/2 flex-col items-center gap-4"
-      >
-        <span className="ml-1 text-[8px] font-bold uppercase tracking-[0.6em] text-zinc-600">
-          Explore
-        </span>
+      {/* Scroll Indicator — mounted guard prevents SSR/client hydration mismatch */}
+      {mounted && (
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-12 w-px items-end justify-center bg-linear-to-b from-zinc-500 to-transparent"
+          style={{ opacity, scale }}
+          className="absolute left-1/2 top-160 flex -translate-x-1/2 flex-col items-center gap-4"
         >
-          <ArrowDown size={12} className="translate-y-3 text-zinc-500" />
+          <span className="ml-1 text-[8px] font-bold uppercase tracking-[0.6em] text-zinc-600">
+            Explore
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="flex h-12 w-px items-end justify-center bg-linear-to-b from-zinc-500 to-transparent"
+          >
+            <ArrowDown size={12} className="translate-y-3 text-zinc-500" />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </section>
   );
 }
