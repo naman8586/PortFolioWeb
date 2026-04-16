@@ -598,9 +598,7 @@ export const HorizonHeroSection = () => {
         {/* Scroll Indicator */}
         {mounted && (
           <div ref={scrollProgressRef} className="absolute left-1/2 bottom-12 flex -translate-x-1/2 flex-col items-center gap-4 z-10" style={{ visibility: 'hidden' }}>
-            <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500">
-              Scroll
-            </span>
+
             <div className="flex h-16 w-[1px] items-end justify-center bg-gradient-to-b from-zinc-500 to-transparent relative overflow-hidden">
                <div className="absolute top-0 w-full bg-white opacity-80" style={{ height: `${scrollProgress * 100}%` }} />
             </div>
