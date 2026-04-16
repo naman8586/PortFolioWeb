@@ -1,9 +1,8 @@
 "use client";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-import Scene from "@/components/Scene";
+import { HorizonHeroSection } from "@/components/ui/horizon-hero-section";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import ProjectGrid from "@/components/ProjectGrid";
@@ -31,7 +30,7 @@ export default function Home() {
 
       {/* ───────────────── Persistent Background ───────────────── */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
-        <Scene />
+        
       </div>
 
       {/* ───────────────── UI Layer ───────────────── */}
@@ -40,7 +39,7 @@ export default function Home() {
 
         {/* Hero - The Entry Point */}
         <section id="home" className="scroll-mt-24">
-          <Hero />
+          <HorizonHeroSection />
         </section>
 
         {/* The Narrative Flow */}
@@ -64,7 +63,7 @@ export default function Home() {
         </div>
 
         {/* ───────────────── Footer ───────────────── */}
-        <footer className="relative border-t border-white/5 bg-black">
+        <footer className="relative border-t border-white/5 bg-transparent">
           <div className="mx-auto max-w-7xl px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white">

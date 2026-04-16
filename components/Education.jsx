@@ -13,27 +13,7 @@ const education = [
     status: "Current",
     details:
       "Focusing on Software Engineering, Data Structures, and Web Technologies.",
-  },
-  {
-    type: "Higher Secondary (XII)",
-    institution: "SSLT Gujarat Sr. Sec. School, Delhi (CBSE)",
-    degree: "Science & Mathematics",
-    duration: "2020 — 2022",
-    score: "80%",
-    status: "Completed",
-    details:
-      "Strong foundation in Physics, Chemistry, and Advanced Mathematics.",
-  },
-  {
-    type: "Secondary (X)",
-    institution: "SSLT Gujarat Sr. Sec. School, Delhi (CBSE)",
-    degree: "General Subjects",
-    duration: "2018 — 2020",
-    score: "90%",
-    status: "Completed",
-    details:
-      "Awarded for academic excellence in Science and Computer Applications.",
-  },
+  }
 ];
 
 const certifications = [
